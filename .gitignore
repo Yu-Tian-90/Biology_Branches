@@ -1,0 +1,2 @@
+# Do not upload mac DS store files 
+.DS_Store
