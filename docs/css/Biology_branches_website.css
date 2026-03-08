@@ -1,29 +1,124 @@
-
-
-body {
-	background-color: lightsteelblue;
+:root {
+  --bg:         #f4f5f7;     
+  --surface:    #ffffff;      
+  --border:     #e8eaed;       
+  --text-main:  #111318;       
+  --text-sub:   #6b7280;       
+  --text-muted: #9ca3af;       
+  --accent:     #2563eb;      
+  --accent-bg:  #eff6ff;      
+  --radius-sm:  8px;
+  --radius-md:  16px;
+  --radius-lg:  24px;
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:  0 10px 30px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04);
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-ul {
-	list-style-type: none;
-	margin: 1;
-	margin-bottom: 20px;
-	padding: 2;
-	background-color: lightcyan;
+
+
+.navbar {
+  position: sticky;            
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px); 
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
-ul li{
-	float: left;
+
+.navbar-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
 }
 
-ul li a {
-	display: block;
-	color: black;
-	padding: 14px 16px;
-	text-decoration: underline;
+.navbar-logo span {
+  color: var(--accent);        
 }
-h1 {
-	text-align: center;
-	color: darkcyan; 
-	margin-top: 100px;
+
+
+.navbar-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;           
 }
+
+.navbar-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-sub);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+}
+
+
+.navbar-links a:hover {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+
+.navbar-links a.active {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+
+.navbar-search {
+  margin-left: auto;
+  position: relative;
+}
+
+.navbar-search input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 8px 16px 8px 38px; 
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  width: 220px;
+  outline: none;
+  transition: all var(--transition);
+}
+
+
+
+/* This is the footer style setting; */
+.footer {
+	background: lightblue;
+	border-top: 3px solid var(--border);
+	padding: 32px 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: var(--text-main);
+
+}
+
+.footer-logo {
+  font-size: 1.1rem;
+  color: var(--text-main);
+}
+
+.footer-logo span { color: var(--accent); }
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.footer-links a:hover { color: var(--accent); }
