@@ -16,7 +16,7 @@
 }
 
 
-
+/* This is the navigation bar style setting; */
 .navbar {
   position: sticky;            
   top: 0;
@@ -39,14 +39,10 @@
   letter-spacing: -0.02em;
 }
 
-.navbar-logo span {
-  color: var(--accent);        
-}
-
 
 .navbar-links {
   display: flex;
-  gap: 4px;
+  gap: 5px;
   list-style: none;           
 }
 
@@ -59,7 +55,7 @@
   transition: background var(--transition), color var(--transition);
 }
 
-
+/* This is color change when putting cursor in the navbar link */
 .navbar-links a:hover {
   background: var(--accent-bg);
   color: var(--accent);
@@ -90,13 +86,148 @@
   transition: all var(--transition);
 }
 
+/* This is the Hero style setting; */
+/* This is the Hero style setting; */
+.hero {
+	background: linear-gradient(30deg, #527ee6 2%, #0891b2 70%);
+	padding: 80px 50px;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.hero::before {
+	content: '';
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	border-radius: 70%;
+	background: rgba(211, 211, 239, 0.36);
+	top: -100px;
+  	right: -100px;
+	pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  bottom: -100px;
+  left: 10%;
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem); /* 响应式字号 */
+  color: white;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 480px;
+  margin: 0 auto 36px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.hero-tags {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;   
+}
+
+.hero-tag {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 7px 18px;
+  border-radius: 20px;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.hero-tag:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
 
 
+.hero-tag.active {
+  background: white;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+
+
+/* This is the Main style setting; */
+/* This is the Main style setting; */
+
+.main {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 37px 25px 30px;
+}
+
+.main_image {
+    width: 37%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.long_card {
+	background: linear-gradient(35deg, #3661d6 0%, #0891b2 100%);
+  border-radius: var(--radius-lg);
+  padding: 37px 37px;
+  display: grid; /* we have two div in html */
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 30px;
+  overflow: auto;
+  color: white;
+}
+
+.long_card h2{
+  color: white;
+}
+
+.long_card_link{
+  color: white;
+  text-decoration: none;
+}
+
+/* This is the footer style setting; */
 /* This is the footer style setting; */
 .footer {
 	background: lightblue;
-	border-top: 3px solid var(--border);
-	padding: 32px 50px;
+	border-top: 3px solid 2px;
+	padding: 30px 10px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -107,18 +238,13 @@
 .footer-logo {
   font-size: 1.1rem;
   color: var(--text-main);
+  padding-left: 10px;
 }
 
-.footer-logo span { color: var(--accent); }
+.footer-logo span { 
+  color: var(--accent); }
 
-.footer-links {
-  display: flex;
-  gap: 24px;
+.footer-end {
+  color: var(--text-main);
+  padding-right: 10px;
 }
-
-.footer-links a {
-  color: var(--text-muted);
-  transition: color var(--transition);
-}
-
-.footer-links a:hover { color: var(--accent); }
